@@ -9,6 +9,7 @@
                 <th scope="col" width="50px">#</th>
                 <th scope="col" width="200px">نام و نام خانوادگی</th>
                 <th scope="col">ایمیل</th>
+                <th scope="col" width="100px">نقش کاربری</th>
                 <th scope="col" width="50px">عملیات</th>
             </tr>
             </thead>
@@ -18,6 +19,7 @@
                     <th scope="row">{{ $row->id }}</th>
                     <td>{{ $row->name }}</td>
                     <td>{{ $row->email }}</td>
+                    <td>{{ $row->getRolePersian() }}</td>
                     <td class="text-center">
                         <a href="{{ route('users.edit', $row->id) }}" class="text-secondary"><i class="fa-duotone fa-edit"></i></a>
                         <a onclick="event.preventDefault(); document.getElementById('trash-{{ $row->id }}').submit();" class="text-danger"><i class="fa-duotone fa-trash"></i></a>

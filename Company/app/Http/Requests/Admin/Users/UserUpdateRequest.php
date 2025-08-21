@@ -27,6 +27,7 @@ class UserUpdateRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'password' => ['required', 'string', 'min:8'],
+            'role' => ['required', 'string'],
         ];
     }
 }

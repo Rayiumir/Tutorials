@@ -19,7 +19,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], static function ($
 
     // Users
 
-    $router->resource('/users', \App\Http\Controllers\Admin\UserController::class);
+    $router->resource('/users', \App\Http\Controllers\Admin\UserController::class)->middleware('role:author,user');
 });
 
 

@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role'
     ];
 
     /**
@@ -44,5 +45,12 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function getRolePersian()
+    {
+        if ($this->role == 'admin') return 'مدیر کل';
+        if ($this->role == 'author') return 'نویسنده';
+        if ($this->role == 'user') return 'کاربر عادی';
     }
 }
