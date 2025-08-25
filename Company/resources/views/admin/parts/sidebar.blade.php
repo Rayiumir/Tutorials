@@ -16,8 +16,11 @@
     <div class="mt-3 p-3">
         <div class="d-grid gep-3">
             <a href="{{ route('admin.index') }}" class="btn {{ request()->routeIs('admin.index') ? 'btn-light text-start border-0 active' : 'btn-light text-start border-0' }} rounded-3 mb-2"><i class="fa-duotone fa-home me-2"></i> پیشخوان </a>
-            @if(in_array(auth()->user()->role, ['user', 'author', 'admin']))
+            @if(in_array(auth()->user()->role, ['admin']))
                 <a href="{{ route('users.index') }}" class="btn {{ request()->routeIs('users.index') || request()->routeIs('users.create') || request()->routeIs('users.edit') ? 'btn-light text-start border-0 active' : 'btn-light text-start border-0' }} rounded-3 mb-2"><i class="fa-duotone fa-users me-2"></i> مدیریت کاربران </a>
+            @endif
+            @if(in_array(auth()->user()->role, ['admin']))
+                <a href="{{ route('categories.index') }}" class="btn {{ request()->routeIs('users.index') ||request()->routeIs('users.edit') ? 'btn-light text-start border-0 active' : 'btn-light text-start border-0' }} rounded-3 mb-2"><i class="fa-duotone fa-list-tree me-2"></i> مدیریت دسته بندی </a>
             @endif
         </div>
     </div>
