@@ -47,7 +47,7 @@
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary rounded-5 mt-3">ثبت کاربر</button>
+                    <button type="submit" class="btn btn-primary rounded-5 mt-3">ویرایش کاربر</button>
                 </form>
             </div>
         </div>

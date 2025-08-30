@@ -66,7 +66,7 @@
                             </div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary rounded-5">ایجاد دسته بندی</button>
+                        <button type="submit" class="btn btn-primary rounded-5">ویرایش دسته بندی</button>
                     </form>
                 </div>
             </div>

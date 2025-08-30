@@ -36,7 +36,12 @@ class CategoryController extends Controller
             $request->validated()
         );
 
-        return back();
+        $notification = array(
+            'message' => 'دسته جدید ایجاد شد',
+            'alert-type' => 'success'
+        );
+
+        return back()->with($notification);
     }
 
     /**
@@ -66,7 +71,12 @@ class CategoryController extends Controller
             $request->validated()
         );
 
-        return back();
+        $notification = array(
+            'message' => 'دسته جدید به روز رسانی شد.',
+            'alert-type' => 'success'
+        );
+
+        return back()->with($notification);
     }
 
     /**
@@ -75,6 +85,13 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return back();
+
+        $notification = array(
+            'message' => 'دسته حذف شد',
+            'alert-type' => 'success'
+        );
+
+
+        return back()->with($notification);
     }
 }

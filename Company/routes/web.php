@@ -18,11 +18,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], static function ($
     $router->get('/logout', [\App\Http\Controllers\Admin\AdminController::class, 'logout'])->name('admin.logout');
 
     // Users
-
     $router->resource('/users', \App\Http\Controllers\Admin\UserController::class)->middleware('role:admin');
 
     // Categories
-
     $router->resource('/categories', \App\Http\Controllers\Admin\CategoryController::class)->middleware('role:admin');
 });
 

@@ -30,7 +30,12 @@ class UserController extends Controller
 
         User::create($data);
 
-        return to_route('users.index');
+        $notification = array(
+            'message' => 'کاربر با موفقیت ایجاد شد',
+            'alert-type' => 'success'
+        );
+
+        return to_route('users.index')->with($notification);
     }
 
     public function edit(User $user)
@@ -42,12 +47,23 @@ class UserController extends Controller
     {
         $user->update($request->validated());
 
-        return to_route('users.index');
+        $notification = array(
+            'message' => 'کاربر به روز رسانی شد',
+            'alert-type' => 'success'
+        );
+
+        return to_route('users.index')->with($notification);
     }
 
     public function destroy(Request $request, User $user)
     {
         $user->delete();
-        return back();
+
+        $notification = array(
+            'message' => 'کاربر با موفقیت حذف شد',
+            'alert-type' => 'success'
+        );
+
+        return back()->with($notification);
     }
 }
