@@ -17,13 +17,16 @@
         <div class="d-grid gep-3">
             <a href="{{ route('admin.index') }}" class="btn {{ request()->routeIs('admin.index') ? 'btn-light text-start border-0 active' : 'btn-light text-start border-0' }} rounded-3 mb-2"><i class="fa-duotone fa-home me-2"></i> پیشخوان </a>
             @if(in_array(auth()->user()->role, ['admin']))
-                <a href="{{ route('users.index') }}" class="btn {{ request()->routeIs('users.index') || request()->routeIs('users.create') || request()->routeIs('users.edit') ? 'btn-light text-start border-0 active' : 'btn-light text-start border-0' }} rounded-3 mb-2"><i class="fa-duotone fa-users me-2"></i> مدیریت کاربران </a>
+                <a href="{{ route('users.index') }}" class="btn {{ request()->routeIs('users.index') || request()->routeIs('users.create') || request()->routeIs('users.edit') ? 'btn-light text-start border-0 active' : 'btn-light text-start border-0' }} rounded-3 mb-2"><i class="fa-duotone fa-users me-2"></i> کاربران </a>
             @endif
             @if(in_array(auth()->user()->role, ['admin']))
-                <a href="{{ route('categories.index') }}" class="btn {{ request()->routeIs('categories.index') ||request()->routeIs('categories.edit') ? 'btn-light text-start border-0 active' : 'btn-light text-start border-0' }} rounded-3 mb-2"><i class="fa-duotone fa-list-tree me-2"></i> مدیریت دسته بندی </a>
+                <a href="{{ route('categories.index') }}" class="btn {{ request()->routeIs('categories.index') ||request()->routeIs('categories.edit') ? 'btn-light text-start border-0 active' : 'btn-light text-start border-0' }} rounded-3 mb-2"><i class="fa-duotone fa-list-tree me-2"></i> دسته بندی </a>
             @endif
             @if(in_array(auth()->user()->role, ['admin']))
-                <a href="{{ route('heroes.index') }}" class="btn {{ request()->routeIs('heroes.index') || request()->routeIs('heroes.edit') || request()->routeIs('heroes.edit') ? 'btn-light text-start border-0 active' : 'btn-light text-start border-0' }} rounded-3 mb-2"><i class="fa-duotone fa-page me-2"></i> صفحه معرفی </a>
+                <a href="{{ route('heroes.index') }}" class="btn {{ request()->routeIs('heroes.index') || request()->routeIs('heroes.create') || request()->routeIs('heroes.edit') ? 'btn-light text-start border-0 active' : 'btn-light text-start border-0' }} rounded-3 mb-2"><i class="fa-duotone fa-page me-2"></i> صفحه معرفی </a>
+            @endif
+            @if(in_array(auth()->user()->role, ['admin']))
+                <a href="{{ route('services.index') }}" class="btn {{ request()->routeIs('heroes.services') || request()->routeIs('heroes.edit') ? 'btn-light text-start border-0 active' : 'btn-light text-start border-0' }} rounded-3 mb-2"><i class="fa-duotone fa-cogs me-2"></i> خدمات ما </a>
             @endif
         </div>
     </div>

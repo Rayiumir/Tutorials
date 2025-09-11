@@ -25,6 +25,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], static function ($
 
     // Here
     $router->resource('/heroes', \App\Http\Controllers\Admin\HeroController::class)->middleware('role:admin');
+
+    // Services
+    $router->resource('/services', \App\Http\Controllers\Admin\ServiceController::class)->middleware('role:admin');
 });
 
 
