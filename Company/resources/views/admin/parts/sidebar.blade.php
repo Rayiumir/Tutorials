@@ -26,7 +26,10 @@
                 <a href="{{ route('heroes.index') }}" class="btn {{ request()->routeIs('heroes.index') || request()->routeIs('heroes.create') || request()->routeIs('heroes.edit') ? 'btn-light text-start border-0 active' : 'btn-light text-start border-0' }} rounded-3 mb-2"><i class="fa-duotone fa-page me-2"></i> صفحه معرفی </a>
             @endif
             @if(in_array(auth()->user()->role, ['admin']))
-                <a href="{{ route('services.index') }}" class="btn {{ request()->routeIs('heroes.services') || request()->routeIs('heroes.edit') ? 'btn-light text-start border-0 active' : 'btn-light text-start border-0' }} rounded-3 mb-2"><i class="fa-duotone fa-cogs me-2"></i> خدمات ما </a>
+                <a href="{{ route('services.index') }}" class="btn {{request()->routeIs('services.index') || request()->routeIs('services.create') || request()->routeIs('services.edit') ? 'btn-light text-start border-0 active' : 'btn-light text-start border-0' }} rounded-3 mb-2"><i class="fa-duotone fa-cogs me-2"></i> خدمات ما </a>
+            @endif
+            @if(in_array(auth()->user()->role, ['admin']))
+                <a href="{{ route('about.index') }}" class="btn {{request()->routeIs('about.index') || request()->routeIs('about.create') || request()->routeIs('about.edit') ? 'btn-light text-start border-0 active' : 'btn-light text-start border-0' }} rounded-3 mb-2"><i class="fa-duotone fa-pen me-2"></i> درباره ما </a>
             @endif
         </div>
     </div>

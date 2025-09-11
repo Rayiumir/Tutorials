@@ -88,7 +88,7 @@ class ServiceController extends Controller
             'message' => 'خدمت با موفقیت حذف شد',
             'alert-type' => 'success'
         ];
-        
+
         return back()->with($notification);
     }
 }
